@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CLIP-CUT — Hype Moment Shorts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand"><span class="mark">CC</span><div><strong>CLIP-CUT</strong><small>AI SHORTS STUDIO</small></div></div>
+      <span class="status"><i></i> SYSTEM READY</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">AUTOMATED VERTICAL CONTENT</p>
+      <h1>Turn every <em>hype moment</em><br />into a viral short.</h1>
+      <p class="subtitle">Drop a YouTube live URL or upload a video. CLIP-CUT detects energetic moments, reframes them vertically, and prepares them for every social platform.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="url">YouTube / URL</button>
+        <button class="tab" data-tab="upload">Upload video</button>
+      </div>
+
+      <div class="panel" id="urlPanel">
+        <label for="url">LIVE OR VIDEO URL</label>
+        <div class="url-row">
+          <input id="url" type="url" placeholder="https://youtube.com/watch?v=..." />
+          <button id="analyzeUrl" class="primary">ANALYZE URL <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="panel hidden" id="uploadPanel">
+        <label>UPLOAD SOURCE</label>
+        <label class="dropzone" id="dropzone">
+          <input id="videoFile" type="file" accept="video/*" />
+          <strong id="fileName">Drop a video here</strong>
+          <span>MP4, MOV or WEBM • up to 2 GB</span>
+        </label>
+      </div>
+
+      <div class="controls">
+        <label>CLIPS <input id="clipCount" type="range" min="1" max="12" value="6" /><b id="clipCountValue">6</b></label>
+      </div>
+
+      <button id="analyzeUpload" class="primary hidden full">GENERATE SHORTS <span>→</span></button>
+
+      <div id="progress" class="progress hidden">
+        <div class="progress-head"><strong id="progressLabel">Analyzing source</strong><span id="progressValue">0%</span></div>
+        <div class="track"><i id="progressBar"></i></div>
+      </div>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="results-head"><div><p class="eyebrow">READY TO PUBLISH</p><h2>Generated shorts</h2></div><button id="exportAll" class="secondary">EXPORT ALL</button></div>
+      <div id="clips" class="clips"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
