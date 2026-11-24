@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  clip-cut:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - clip_data:/app/data
+    restart: unless-stopped
+volumes:
+  clip_data:
